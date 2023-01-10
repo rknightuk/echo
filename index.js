@@ -80,7 +80,7 @@ for (const site of config.sites)
 
     if (!DRY_MODE)
     {
-        await fs.promises.writeFile(`data/${siteFile}`, site.transform.getId(items[0]));
+        await fs.promises.writeFile(`${echoPath}data/${siteFile}`, site.transform.getId(items[0]));
     }
 
     if (INIT_MODE)
