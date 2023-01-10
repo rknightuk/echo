@@ -1,6 +1,5 @@
 import fs from 'fs'
 import RSSParser from 'rss-parser'
-import promptSync from 'prompt-sync'
 
 import config from './config.js'
 
