@@ -1,5 +1,8 @@
 import fs from 'fs'
+import path from 'path'
 import RSSParser from 'rss-parser'
+
+const echoPath = process.argv[1].replace('index.js', '')
 
 import config from './config.js'
 
@@ -34,16 +37,16 @@ async function createPost(path)
     return res.json()
 }
 
-if (!fs.existsSync('./data')) {
-    fs.mkdirSync('./data')
+if (!fs.existsSync(`${echoPath}data`)) {
+    fs.mkdirSync(`${echoPath}data`)
     console.log('📁 Data folder created!')
 }
 
 for (const site of config.sites)
 {
     const siteFile = `${site.name}.txt`
-    if (!fs.existsSync(`./data/${siteFile}`)) {
-        await fs.writeFile(`./data/${siteFile}`, '', { flag: "wx" }, (err) => {
+    if (!fs.existsSync(`${echoPath}data/${siteFile}`)) {
+        await fs.writeFile(`${echoPath}data/${siteFile}`, '', { flag: "wx" }, (err) => {
             if (err) throw err;
             console.log(`✅ ${site.name} data file created!`)
         })
@@ -55,7 +58,7 @@ for (const site of config.sites)
     {
         items = site.transform.filter(items)
     }
-    const data = await fs.promises.readFile(`./data/${siteFile}`, 'utf8')
+    const data = await fs.promises.readFile(`${echoPath}data/${siteFile}`, 'utf8')
     const latestId = (data.split('\n') || []).filter(l => l)[0];
     if (latestId) {
         items.every((item, index) => {
@@ -77,13 +80,13 @@ for (const site of config.sites)
 
     if (!DRY_MODE)
     {
-        await fs.promises.writeFile(`./data/${siteFile}`, site.transform.getId(items[0]));
+        await fs.promises.writeFile(`data/${siteFile}`, site.transform.getId(items[0]));
     }
 
     if (INIT_MODE)
     {
         console.log('⚙️ Echo initialised!')
-        process.exit()
+        continue
     }
 
     for (const item of items)
