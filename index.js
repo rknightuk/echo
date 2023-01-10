@@ -92,7 +92,7 @@ for (const site of config.sites)
     for (const item of items)
     {
         const formatted = site.transform.format(item)
-        const categories = (site.categories || []).map(c => `&category=[]=${c}`).join('')
+        const categories = (site.categories || []).map(c => `&category[]=${c}`).join('')
 
         if (DRY_MODE)
         {
