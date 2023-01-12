@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import RSSParser from 'rss-parser'
+import posters from './lib/posters/index.js'
 
 const echoPath = process.argv[1].replace('index.js', '')
 
@@ -22,19 +23,6 @@ async function getFeedItems(feed)
 {
     const data = await (new RSSParser()).parseURL(feed)
     return data.items
-}
-
-async function createPost(path)
-{
-    const res = await fetch(path, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Authorization': `Bearer ${config.apiKey}`
-            },
-        })
-
-    return res.json()
 }
 
 if (!fs.existsSync(`${echoPath}data`)) {
@@ -92,27 +80,15 @@ for (const site of config.sites)
     for (const item of items)
     {
         const formatted = site.transform.format(item)
-        const categories = (site.categories || []).map(c => `&category[]=${c}`).join('')
 
         if (DRY_MODE)
         {
             console.log(`☑️ Will create ${site.name} post for ${formatted.date} - ${formatted.content}`)
         } else {
-            let path = 'https://micro.blog/micropub' +
-            '?h=entry' +
-            `&mp-destination=${config.siteUrl}` +
-            `&content=${encodeURIComponent(formatted.content)}` +
-            `&published=${formatted.date}` +
-            categories
-
-            if (formatted.title)
+            for (const service of site.services)
             {
-                path += `&name=${formatted.title}`
+                await posters[service](config.services[service], formatted, site)
             }
-
-            const res = await createPost(path)
-
-            console.log(`⭐ Created post at ${res.url}!`)
         }
     }
 }
