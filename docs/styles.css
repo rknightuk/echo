@@ -1,5 +1,6 @@
 :root {
     --links: #F26522;
+    --terminal-text: #dbdbdb;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -103,6 +104,7 @@ body:has(.service-webhook.active) .form-services .form-row-hook {
     background-color: #151818;
     padding: 15px 24px 0 24px;
     height: 180px;
+    color: var(--terminal-text);
 }
 
 .buttons {
@@ -115,7 +117,6 @@ body:has(.service-webhook.active) .form-services .form-row-hook {
 .buttons .circle {
     width: 10px;
     height: 10px;
-    background-color: white;
     border-radius: 10px;
     margin-right: 7px;
 }

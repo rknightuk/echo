@@ -1,6 +1,6 @@
 # Echo - RSS Cross Poster
 
-![Echo screenshot](animated.gif)
+![Echo screenshot](screenshot.png)
 
 ## What is it?
 
