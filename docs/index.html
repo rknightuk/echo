@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+		<meta name="viewport" content="width=device-width" />
+		<meta name="Description" content="Robb Knight">
+
+		<title>Echo - RSS Cross Poster</title>
+
+		<link rel="stylesheet" href="water.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+        <svg width="0" height="0" style="display: none;">
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" id="code">
+                <path
+                    d="M234.8 511.7L196 500.4c-4.2-1.2-6.7-5.7-5.5-9.9L331.3 5.8c1.2-4.2 5.7-6.7 9.9-5.5L380 11.6c4.2 1.2 6.7 5.7 5.5 9.9L244.7 506.2c-1.2 4.3-5.6 6.7-9.9 5.5zm-83.2-121.1l27.2-29c3.1-3.3 2.8-8.5-.5-11.5L72.2 256l106.1-94.1c3.4-3 3.6-8.2.5-11.5l-27.2-29c-3-3.2-8.1-3.4-11.3-.4L2.5 250.2c-3.4 3.2-3.4 8.5 0 11.7L140.3 391c3.2 3 8.2 2.8 11.3-.4zm284.1.4l137.7-129.1c3.4-3.2 3.4-8.5 0-11.7L435.7 121c-3.2-3-8.3-2.9-11.3.4l-27.2 29c-3.1 3.3-2.8 8.5.5 11.5L503.8 256l-106.1 94.1c-3.4 3-3.6 8.2-.5 11.5l27.2 29c3.1 3.2 8.1 3.4 11.3.4z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="mastodon">
+                <path
+                    d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z">
+                </path>
+            </symbol>
+            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="microblog">
+                <path
+                    d="M399.36,362.23c29.49-34.69,47.1-78.34,47.1-125.79C446.46,123.49,346.86,32,224,32S1.54,123.49,1.54,236.44,101.14,440.87,224,440.87a239.28,239.28,0,0,0,79.44-13.44,7.18,7.18,0,0,1,8.12,2.56c18.58,25.09,47.61,42.74,79.89,49.92a4.42,4.42,0,0,0,5.22-3.43,4.37,4.37,0,0,0-.85-3.62,87,87,0,0,1,3.69-110.69ZM329.52,212.4l-57.3,43.49L293,324.75a6.5,6.5,0,0,1-9.94,7.22L224,290.92,164.94,332a6.51,6.51,0,0,1-9.95-7.22l20.79-68.86-57.3-43.49a6.5,6.5,0,0,1,3.8-11.68l71.88-1.51,23.66-67.92a6.5,6.5,0,0,1,12.28,0l23.66,67.92,71.88,1.51a6.5,6.5,0,0,1,3.88,11.68Z">
+                </path>
+            </symbol>
+            <symbol version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 24 24" id="sound">
+                <title>sound</title>
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Artboard-4" transform="translate(-268.000000, -863.000000)" fill="currentColor">
+                        <g id="346" transform="translate(268.000000, 863.000000)">
+                            <path
+                                d="M2,11.0093689 C2,10.4519098 2.44386482,10 3,10 C3.55228475,10 4,10.4433532 4,11.0093689 L4,12.9906311 C4,13.5480902 3.55613518,14 3,14 C2.44771525,14 2,13.5566468 2,12.9906311 L2,11.0093689 Z M5,9.99077797 C5,9.44358641 5.44386482,9 6,9 C6.55228475,9 7,9.45097518 7,9.99077797 L7,14.009222 C7,14.5564136 6.55613518,15 6,15 C5.44771525,15 5,14.5490248 5,14.009222 L5,9.99077797 Z M8,7.00247329 C8,6.44882258 8.44386482,6 9,6 C9.55228475,6 10,6.45576096 10,7.00247329 L10,16.9975267 C10,17.5511774 9.55613518,18 9,18 C8.44771525,18 8,17.544239 8,16.9975267 L8,7.00247329 Z M11,5.00087166 C11,4.4481055 11.4438648,4 12,4 C12.5522847,4 13,4.44463086 13,5.00087166 L13,18.9991283 C13,19.5518945 12.5561352,20 12,20 C11.4477153,20 11,19.5553691 11,18.9991283 L11,5.00087166 Z M14,8.99703014 C14,8.4463856 14.4438648,8 15,8 C15.5522847,8 16,8.45303631 16,8.99703014 L16,15.0029699 C16,15.5536144 15.5561352,16 15,16 C14.4477153,16 14,15.5469637 14,15.0029699 L14,8.99703014 Z M17,7.00247329 C17,6.44882258 17.4438648,6 18,6 C18.5522847,6 19,6.45576096 19,7.00247329 L19,16.9975267 C19,17.5511774 18.5561352,18 18,18 C17.4477153,18 17,17.544239 17,16.9975267 L17,7.00247329 Z M20,9.99077797 C20,9.44358641 20.4438648,9 21,9 C21.5522847,9 22,9.45097518 22,9.99077797 L22,14.009222 C22,14.5564136 21.5561352,15 21,15 C20.4477153,15 20,14.5490248 20,14.009222 L20,9.99077797 Z"
+                                id="Combined-Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </symbol>
+        </svg>
+
+		<a href="https://github.com/rknightuk/echo" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+		<header>
+			<h1>
+                <svg class="icon">
+                    <use xlink:href="#sound"></use>
+                </svg> Echo
+            </h1>
+            <h2>RSS Cross Poster</h2>
+			<p>by <a href="https://rknight.me">Robb Knight</a></p>
+		</header>
+
+        <squirm-inal autoplay>
+            <pre class="terminal-output">
+                <div class="buttons">
+                    <div class="circle red"></div>
+                    <div class="circle yellow"></div>
+                    <div class="circle green"></div>
+                </div>
+$ node index.js
+⚙️ Fetching for status.lol
+⭐ Created post on Micro.blog!
+⭐ Created post on Mastodon!
+⚙️ Fetching for Letterboxed
+⭐ Created post on Micro.blog!
+⚙️ Fetching for Nexus
+❎ No new items found for Nexus
+            </pre>
+        </squirm-inal>
+        <script type="module" src="squirminal.js"></script>
+
+        <h2>What is Echo?</h2>
+
+        <p>Echo is a node script to post new items from an RSS feed to various services including Micro.blog and Mastodon. Checkout <a href="https://github.com/rknightuk/echo">the readme on GitHub</a> for installation instructions. Use the forms below to generate your config.</p>
+
+        <h2>Config Generator</h2>
+
+        <form id="form-feed">
+            <h3>RSS feeds to cross-post</h3>
+            <div class="form-row">
+                <label class="form-label">Feed URL:</label>
+                <input type="text" id="feed" placeholder="https://example.com/feed">
+            </div>
+            <div class="form-row">
+                <label class="form-label">Site Name:</label>
+                <input type="text" id="name" placeholder="example.com">
+            </div>
+            <div class="form-row">
+                <label class="form-label">Categories:</label>
+                <input type="text" id="categories" placeholder="Movies, TV">
+            </div>
+            <div class="form-row">
+                <div class="form-label">Post to:</div>
+                <div>
+                    <input type="checkbox" name="feed_microblog" id="feed_microblog"><label for="feed_microblog">Micro.blog</label><br>
+                    <input type="checkbox" name="feed_mastodon" id="feed_mastodon"><label for="feed_mastodon">Mastodon</label><br>
+                    <input type="checkbox" name="feed_webhook" id="feed_webhook"><label for="feed_webhook">Webhook</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-label"></div>
+                <button type="submit">Add Feed</button>
+            </div>
+        </form>
+
+        <h3>Services to cross-post to</h3>
+        <div class="services">
+            <div class="service service-mb active" data-id="mb">
+                <svg class="icon">
+                    <use xlink:href="#microblog"></use>
+                </svg> Micro.blog
+            </div>
+            <div class="service service-mastodon" data-id="masto">
+                <svg class="icon">
+                    <use xlink:href="#mastodon"></use>
+                </svg> Mastodon
+            </div>
+            <div class="service service-webhook" data-id="hook">
+                <svg class="icon">
+                    <use xlink:href="#code"></use>
+                </svg> Webhook
+            </div>
+        </div>
+
+        <form id="form-services" class="form-services">
+            <!-- Micro.blog -->
+            <div class="form-row form-row-mb">
+                <label class="form-label">Micro.blog site:</label>
+                <input type="text" id="mb_site" placeholder="https://coolsite.micro.blog">
+            </div>
+            <div class="form-row form-row-mb">
+                <label class="form-label">API Key:</label>
+                <input type="text" id="mb_key" placeholder="hunter2">
+            </div>
+
+            <!-- Mastodon -->
+            <div class="form-row form-row-masto">
+                <label class="form-label">Instance URL:</label>
+                <input type="text" id="mast_site" placeholder="https://social.lol">
+            </div>
+            <div class="form-row form-row-masto">
+                <label class="form-label">Access Token:</label>
+                <input type="text" id="mast_key" placeholder="hunter2">
+            </div>
+            <div class="form-row form-row-masto">
+                <div class="form-label">Visibility:</div>
+                <div>
+                    <input type="radio" name="mast_vis" id="public" value="public" checked><label for="public">public</label><br>
+                    <input type="radio" name="mast_vis" id="unlisted" value="unlisted"><label for="unlisted">unlisted</label><br>
+                    <input type="radio" name="mast_vis" id="private" value="private"><label for="private">private</label><br>
+                    <input type="radio" name="mast_vis" id="direct" value="direct"><label for="direct">direct</label>
+                </div>
+            </div>
+            <div class="form-row form-row-masto">
+                <div class="form-label">Sensitive:</div>
+                <div>
+                    <input type="checkbox" id="mast_sens">
+                </div>
+            </div>
+
+            <!-- Webhook -->
+            <div class="form-row form-row-hook">
+                <label class="form-label">Endpoint:</label>
+                <input type="text" id="hook_url" placeholder="https://example.com/hooks/recieve">
+            </div>
+
+            <div class="form-row form-row-submit">
+                <div class="form-label"></div>
+                <button type="submit">Add Service</button>
+            </div>
+        </form>
+
+        <h3>Your Config</h3>
+
+        <button onclick="copyConfig()">Copy to Clipboard</button>
+        <pre id="config_output"></pre>
+
+        <script src="tinytoast.js"></script>
+        <style>
+            .tinyToast {
+                background-color: #b2f2bb;
+                border: 2px solid #69db7c;
+                color: black;
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        </style>
+        <script>
+            (function () {
+                window.echoConfig = {
+                    services: {},
+                    sites: [],
+                }
+
+                const configOutput = document.getElementById('config_output')
+                renderConfig = () => {
+                    configOutput.innerHTML = JSON
+                        .stringify(window.echoConfig, null, 2)
+                        .replaceAll('"presets.default"', 'presets.default')
+                }
+
+                copyConfig = () => {
+                    navigator.clipboard.writeText(configOutput.innerText)
+                    tinyToast.show(`Config copied to clipboard`).hide(2000)
+                }
+
+                renderConfig()
+
+                Array.from(document.getElementsByClassName('service')).forEach(service => {
+                    service.addEventListener('click', (e) => {
+                        Array.from(document.getElementsByClassName('service')).forEach(s => {
+                            s.className = s.className.replace('active', '')
+                        })
+                        if (e.currentTarget.className.includes('active')) {
+                            e.currentTarget.className = e.currentTarget.className.replace('active', '')
+                        } else {
+                            e.currentTarget.className += ' active'
+                        }
+                    })
+                })
+
+                const feedForm = document.getElementById('form-feed')
+                feedForm.addEventListener('submit', (e) => {
+                    e.preventDefault()
+                    const inputs = e.currentTarget.elements
+                    const feed = {
+                        name: inputs['name'].value.toLowerCase().replaceAll(' ', '_'),
+                        feed: inputs['feed'].value,
+                        categories: inputs['categories'].value ? inputs['categories'].value.split(',') : [],
+                        services: [
+                            inputs['feed_microblog'].checked ? 'mb' : false,
+                            inputs['feed_mastodon'].checked ? 'masto' : false,
+                            inputs['feed_webhook'].checked ? 'hook' : false,
+                        ].filter(s => s),
+                        transform: 'presets.default',
+                    }
+                    const errors = []
+                    if (!feed.name) errors.push('name')
+                    if (!feed.feed) errors.push('feed URL')
+                    if (!feed.services.length) errors.push('at least one service')
+
+                    if (errors.length)
+                    {
+                        tinyToast.show(`${errors.join(', ')} is required`).hide(2000)
+                        return
+                    }
+                    feedForm.reset()
+
+                    window.echoConfig.sites.push(feed)
+                    tinyToast.show('Site added to config!').hide(1500)
+                    renderConfig()
+                })
+
+                const servicesForm = document.getElementById('form-services')
+                servicesForm.addEventListener('submit', (e) => {
+                    e.preventDefault()
+                    const inputs = e.currentTarget.elements
+                    const service = document.querySelector('.service.active').dataset.id
+                    let serviceConfig = {}
+                    const errors = []
+                    if (service === 'mb')
+                    {
+                        serviceConfig = {
+                            siteUrl: inputs['mb_site'].value,
+                            apiKey: inputs['mb_key'].value,
+                        }
+                        if (!serviceConfig.siteUrl) errors.push('site')
+                        if (!serviceConfig.apiKey) errors.push('api key')
+                    } else if (service === 'masto')
+                    {
+                        serviceConfig = {
+                            instance: inputs['mast_site'].value,
+                            accessToken: inputs['mast_key'].value,
+                            visibility: document.querySelector('input[name="mast_vis"]:checked').value,
+                            sensitive: inputs['mast_sens'].checked,
+                        }
+                        if (!serviceConfig.instance) errors.push('instance url')
+                        if (!serviceConfig.accessToken) errors.push('access token')
+                    } else {
+                        serviceConfig = {
+                            url: inputs['hook_url'].value,
+                        }
+                        if (!serviceConfig.instance) errors.push('url')
+                    }
+
+                    if (errors.length) {
+                        tinyToast.show(`${errors.join(', ')} is required`).hide(2000)
+                        return
+                    }
+
+                    servicesForm.reset()
+
+                    window.echoConfig.services[service] = serviceConfig
+                    tinyToast.show('Service added to config!').hide(1500)
+                    renderConfig()
+                })
+            })();
+        </script>
+	</body>
+</html>

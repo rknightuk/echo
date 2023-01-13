@@ -34,6 +34,8 @@ Echo keeps track of the last item posted so on subsequent runs it will only post
 
 There are two parts to configure: `sites` and `services`. `sites` is the RSS feeds you want to cross-post and `services` is the services you want to cross-post to.
 
+Go to [the Echo website](https://echo.rknight.me) to use the config generator and paste the generated config into `config.js` or see below for setting it up manually.
+
 ### Sites
 
 `config.sites` is an array of RSS feeds you wish to cross-post. A site has five attribute:
