@@ -1,5 +1,4 @@
 import fs from 'fs'
-import path from 'path'
 import RSSParser from 'rss-parser'
 import posters from './lib/posters/index.js'
 

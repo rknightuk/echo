@@ -5,7 +5,8 @@
 ## What is it?
 
 Echo is a node script to post new items from an RSS feed to Micro.blog.
-
+//TODO update readme
+//TODO config generator
 ### Why "Echo"?
 
 It does RSS feeds, so Feeder. Feeder are a band with an album called Echo Park. Echo is a good name because the album link AND the meaning of the word echo. So there.
