@@ -18,8 +18,15 @@ if (DRY_MODE && INIT_MODE)
 
 if (DRY_MODE) console.log('🌵 Running in dry mode, no posts will be created')
 
-async function getFeedItems(feed)
+async function getFeedItems(feed, isJson)
 {
+    if (isJson)
+    {
+        const res = await fetch(feed)
+        const feedData = await res.json()
+        return feedData
+    }
+
     const data = await (new RSSParser()).parseURL(feed)
     return data.items
 }
@@ -40,7 +47,7 @@ for (const site of config.sites)
     }
 
     console.log(`⚙️ Fetching for ${site.name}`)
-    let items = await getFeedItems(site.feed)
+    let items = await getFeedItems(site.feed, site.json)
     if (site.transform.filter)
     {
         items = site.transform.filter(items)

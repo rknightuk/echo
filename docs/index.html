@@ -97,6 +97,12 @@ $ node index.js
                 <input type="text" id="feed" placeholder="https://example.com/feed">
             </div>
             <div class="form-row">
+                <div class="form-label">JSON Feed?</div>
+                <div>
+                    <input type="checkbox" name="feed_is_json" id="feed_is_json"><label for="feed_is_json"></label><br>
+                </div>
+            </div>
+            <div class="form-row">
                 <label class="form-label">Site Name:</label>
                 <input type="text" id="name" placeholder="example.com">
             </div>
@@ -177,7 +183,7 @@ $ node index.js
             <!-- Webhook -->
             <div class="form-row form-row-hook">
                 <label class="form-label">Endpoint:</label>
-                <input type="text" id="hook_url" placeholder="https://example.com/hooks/recieve">
+                <input type="text" id="hook_url" name="hook_url" placeholder="https://example.com/hooks/recieve">
             </div>
 
             <div class="form-row form-row-submit">
@@ -195,7 +201,7 @@ $ node index.js
 
 
         <footer>
-            <p>Made by <a href="http://rknight.me">Robb Knight</a> &bull; <a href="https://www.buymeacoffee.com/rknightuk">Buy me a Coffee</a> &bull; Softies icons by <a href="https://robbiepearce.com/softies/">Robbie Pearce</a></p>
+            <p>Made by <a href="http://rknight.me">Robb Knight</a> &bull; <a href="https://www.buymeacoffee.com/rknightuk">Buy me a Coffee</a> &bull; <a href="https://github.com/rknightuk/echo/blob/main/changelog.md">Changelog</a> &bull; Softies icons by <a href="https://robbiepearce.com/softies/">Robbie Pearce</a></p>
         </footer>
 
         <script src="tinytoast.js"></script>
@@ -249,6 +255,7 @@ $ node index.js
                     const feed = {
                         name: inputs['name'].value.toLowerCase().replaceAll(' ', '_'),
                         feed: inputs['feed'].value,
+                        json: inputs['feed_is_json'].checked,
                         categories: inputs['categories'].value ? inputs['categories'].value.split(',') : [],
                         services: [
                             inputs['feed_microblog'].checked ? 'mb' : false,
@@ -303,7 +310,7 @@ $ node index.js
                         serviceConfig = {
                             url: inputs['hook_url'].value,
                         }
-                        if (!serviceConfig.instance) errors.push('url')
+                        if (!serviceConfig.url) errors.push('url')
                     }
 
                     if (errors.length) {
