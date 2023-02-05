@@ -44,7 +44,7 @@ for (const site of config.sites)
 {
     const siteFile = `${site.name}.txt`
     if (!fs.existsSync(`${echoPath}data/${siteFile}`)) {
-        await fs.writeFile(`${echoPath}data/${siteFile}`, '', { flag: "wx" }, (err) => {
+        await fs.writeFile(`${echoPath}data/${siteFile}`, JSON.stringify([], '', 2), { flag: "wx" }, (err) => {
             if (err) throw err;
             console.log(`✅ ${site.name} data file created!`)
         })
@@ -56,34 +56,30 @@ for (const site of config.sites)
     {
         items = site.transform.filter(items)
     }
-    const data = await fs.promises.readFile(`${echoPath}data/${siteFile}`, 'utf8')
-    const latestId = (data.split('\n') || []).filter(l => l)[0];
-    if (latestId) {
-        items.every((item, index) => {
-            const itemId = site.transform.getId(item)
-            if (itemId === latestId)
-            {
-                items = items.slice(0, index)
-                return false
-            }
-            return true
+    const existingIds = JSON.parse(fs.readFileSync(`${echoPath}data/${siteFile}`, 'utf8'))
+
+    if (existingIds.length > 0) {
+        items = items.filter(item => {
+            return !existingIds.includes(site.transform.getId(item))
         })
     }
 
-    if (!items.length)
+    if (!items.length && !INIT_MODE)
     {
         console.log(`❎ No new items found for ${site.name}`)
         continue
     }
 
+    const newIds = items.map(i => site.transform.getId(i))
+
     if (!DRY_MODE)
     {
-        await fs.promises.writeFile(`${echoPath}data/${siteFile}`, site.transform.getId(items[0]));
+        fs.writeFileSync(`${echoPath}data/${siteFile}`, JSON.stringify([...newIds, ...existingIds], '', 2));
     }
 
     if (INIT_MODE)
     {
-        console.log('⚙️ Echo initialised!')
+        console.log(`⚙️ Echo initialised for ${site.name}!`)
         continue
     }
 
