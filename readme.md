@@ -100,6 +100,7 @@ You can define the body of your post in `format` to make your posts look exactly
 
 - To convert HTML to markdown, use `helpers.toMarkdown(text)`
 - To use [Cheerio](https://cheerio.js.org/) use `helpers.cheerioLoad(text)`
+- To generate a UUID use `helpers.generateUuid()`
 
 ```js
 format: (data) => {
@@ -144,3 +145,11 @@ The webhook service will send a `POST` request with the result of `transform.for
 |Key|Value|Notes|
 |---|---|---|
 |`url`|The URL to post to|
+
+#### Omnivore
+
+The Omnivore service will save a URL to your Omnivore account.
+
+|Key|Value|Notes|
+|---|---|---|
+|`apiKey`|Your Omnivore API key|

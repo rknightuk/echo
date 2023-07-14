@@ -76,6 +76,7 @@ input {
 .service-mb { fill: #FFA900; }
 .service-mastodon { fill: #5B4DE3; }
 .service-webhook { fill: #37b24d }
+.service-omnivore { fill: #FFDE8C; }
 
 .form-services .form-row {
     display: none;
@@ -90,6 +91,10 @@ body:has(.service-mastodon.active) .form-services .form-row-masto {
 }
 
 body:has(.service-webhook.active) .form-services .form-row-hook {
+    display: flex;
+}
+
+body:has(.service-omnivore.active) .form-services .form-row-omnivore {
     display: flex;
 }
 
