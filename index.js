@@ -52,6 +52,15 @@ for (const site of config.sites)
 
     console.log(`⚙️ Fetching for ${site.name}`)
     let items = await getFeedItems(site.feed, site.json, site.customFields)
+
+    if (!site.transform.getId(items[0]))
+    {
+        console.log(`❌ No ID found for item in ${site.name}, skipping`)
+        console.log(`👀 To fix this, check the transform.getId function for this site. It's likely you're expecting id but the feed item uses guid instead`)
+        // throw new Error('No ID found for item')
+        break;
+    }
+
     if (site.transform.filter)
     {
         items = site.transform.filter(items)
