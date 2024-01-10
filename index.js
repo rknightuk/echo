@@ -24,7 +24,7 @@ async function getFeedItems(feed, isJson, customFields)
     {
         const res = await fetch(feed)
         const feedData = await res.json()
-        return feedData
+        return feedData.items
     }
 
     const data = await (new RSSParser({
