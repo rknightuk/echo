@@ -53,6 +53,12 @@ for (const site of config.sites)
     console.log(`⚙️ Fetching for ${site.name}`)
     let items = await getFeedItems(site.feed, site.json, site.customFields)
 
+    if (items.length === 0)
+    {
+        console.log(`0️⃣ No items found for ${site.name}`)
+        continue;
+    }
+
     if (!site.transform.getId(items[0]))
     {
         console.log(`❌ No ID found for item in ${site.name}, skipping`)
