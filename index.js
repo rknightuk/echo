@@ -32,7 +32,7 @@ async function getFeedItems(feed, isJson, customFields)
             item: customFields || [],
         }
     })).parseURL(feed)
-    return data.items
+    return data.items || []
 }
 
 if (!fs.existsSync(`${echoPath}data`)) {
