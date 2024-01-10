@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
+    "html-entities": "^2.4.0",
     "html-to-text": "^9.0.3",
     "rss-parser": "^3.12.0",
     "turndown": "^7.1.1",
+    "url-regex": "^5.0.0",
     "uuid": "^9.0.0"
   },
   "type": "module"
