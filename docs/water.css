@@ -4,33 +4,6 @@
  * if a system-wide theme preference is set on the user's device.
  */
 
-@font-face {
-    font-family: 'Inter';
-    font-style:  normal;
-    font-weight: 100;
-    font-display: swap;
-    src: url("fonts/Inter-Regular.woff2?v=3.19") format("woff2"),
-    url("fonts/Inter-Regular.woff?v=3.19") format("woff");
-}
-
-@font-face {
-    font-family: 'Inter';
-    font-style:  normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url("fonts/Inter-Bold.woff2?v=3.19") format("woff2"),
-    url("fonts/Inter-Bold.woff?v=3.19") format("woff");
-}
-
-@font-face {
-    font-family: 'Inter';
-    font-style:  italic;
-    font-weight: 400;
-    font-display: swap;
-    src: url("fonts/Inter-Italic.woff2?v=3.19") format("woff2"),
-    url("fonts/Inter-Italic.woff?v=3.19") format("woff");
-}
-
 :root {
   --background-body: #fff;
   --background: #efefef;
@@ -136,7 +109,8 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+  font-family: system-ui, sans-serif;
+  font-weight: normal;
   line-height: 1.4;
   max-width: 800px;
   margin: 20px auto;

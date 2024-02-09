@@ -101,6 +101,9 @@ You can define the body of your post in `format` to make your posts look exactly
 - To convert HTML to markdown, use `helpers.toMarkdown(text)`
 - To use [Cheerio](https://cheerio.js.org/) use `helpers.cheerioLoad(text)`
 - To generate a UUID use `helpers.generateUuid()`
+- Get the length of the post based on how Mastodon calculates this (links are always 23 characters, for example) `helpers.getMastodonLength(string)`
+- Get all links as an array `helpers.getLinks(string)`
+- Encode and decode HTML entities with `helpers.decode(string)` and `helpers.encode(string)`
 
 ```js
 format: (data) => {
@@ -153,3 +156,28 @@ The Omnivore service will save a URL to your Omnivore account.
 |Key|Value|Notes|
 |---|---|---|
 |`apiKey`|Your Omnivore API key|
+
+
+#### GitHub
+
+Create a new file on a GitHub repository.
+
+| Key      | Value                 | Notes |
+| -------- | --------------------- | ----- |
+| `token` | Your GitHub token |
+| `repo` | The repository to commit to | e.g. `rknightuk/echo`
+| `branch` | The branch to commit to |
+| `committer` | An object with `name` and `email` values | e.g. `{ name: 'Robb', email: 'robb@example.com }`
+
+For posting to Github your `format` function must return `content` and `filePath` where `filePath` is the path to where the file will be in the Github repository, for example `src/posts/movies/2024-02-09.md`. It can optionally return a `commit` message, which will fallback to `New post` if none is set. Example `format` function for GitHub:
+
+```js
+format: (data) => {
+    return {
+        content: data.title,
+        date: new Date(data.isoDate).toISOString(),
+        filePath: `src/posts/movies/${new Date().getFullYear()}/${new Date().toISOString().split('T').md`,
+        commit: `Add ${data.title}`,
+    }
+}
+```

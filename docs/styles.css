@@ -73,10 +73,15 @@ input {
     cursor: pointer;
 }
 
+.service .icon {
+    margin-bottom: 3px;
+}
+
 .service-mb { fill: #FFA900; }
 .service-mastodon { fill: #5B4DE3; }
 .service-webhook { fill: #37b24d }
 .service-omnivore { fill: #FFDE8C; }
+.service-github { fill: #f5f5f5; }
 
 .form-services .form-row {
     display: none;
@@ -95,6 +100,10 @@ body:has(.service-webhook.active) .form-services .form-row-hook {
 }
 
 body:has(.service-omnivore.active) .form-services .form-row-omnivore {
+    display: flex;
+}
+
+body:has(.service-github.active) .form-services .form-row-github {
     display: flex;
 }
 

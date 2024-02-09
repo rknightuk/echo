@@ -104,7 +104,7 @@ for (const site of config.sites)
 
         if (DRY_MODE)
         {
-            console.log(`☑️ Will create ${site.name} post for ${formatted.date} - ${formatted.content}`)
+            console.log(`✅ Will create ${site.name} post for ${formatted.date}\n\n${formatted.content}`)
         } else {
             for (const service of site.services)
             {
