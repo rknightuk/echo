@@ -48,6 +48,9 @@ input {
 
 .services {
     display: flex;
+    flex-wrap: wrap;
+    grid-gap: 5px;
+    justify-content: space-between;
 }
 
 .service {
@@ -67,9 +70,10 @@ input {
     color: var(--links);
 }
 
-.service:hover {
+.service:hover,
+.service:hover svg {
     fill: var(--links);
-    color: var(--links);
+    color: var(--links)!important;
     cursor: pointer;
 }
 
@@ -82,6 +86,7 @@ input {
 .service-webhook { fill: #37b24d }
 .service-omnivore { fill: #FFDE8C; }
 .service-github { fill: #f5f5f5; }
+.service-linkace svg { color: #41649a; }
 
 .form-services .form-row {
     display: none;
@@ -104,6 +109,10 @@ body:has(.service-omnivore.active) .form-services .form-row-omnivore {
 }
 
 body:has(.service-github.active) .form-services .form-row-github {
+    display: flex;
+}
+
+body:has(.service-linkace.active) .form-services .form-row-linkace {
     display: flex;
 }
 

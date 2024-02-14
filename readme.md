@@ -181,3 +181,31 @@ format: (data) => {
     }
 }
 ```
+
+#### LinkAce
+
+|Key|Value|Notes|
+|---|---|---|
+|`domain`|The LinkAce domain where you have it installed|e.g.`https://links.example.com`|
+|`apiKey`|A LinkAce API key||
+
+`content` returns from `transform.format` should be a link. Categories on the site will be converted to tags. Any tags included from `format` will be merged with `categories`.
+
+```js
+{
+    name: 'mycoollinkfeed',
+    feed: 'https://example.com/linkfeed.xml',
+    categories: ['ATag'],
+    transform: {
+        getId: presets.default.getId,
+        format: (data) => {
+            return {
+                content: data.external_url,
+                date: data.date_published,
+                tags: data._custom.tags,
+            }
+        }
+    },
+    services: [SERVICES.LINKACE],
+},
+```
