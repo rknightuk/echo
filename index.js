@@ -63,7 +63,6 @@ for (const site of config.sites)
     {
         console.log(`❌ No ID found for item in ${site.name}, skipping`)
         console.log(`👀 To fix this, check the transform.getId function for this site. It's likely you're expecting id but the feed item uses guid instead`)
-        // throw new Error('No ID found for item')
         break;
     }
 
