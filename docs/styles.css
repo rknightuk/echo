@@ -87,6 +87,7 @@ input {
 .service-omnivore { fill: #FFDE8C; }
 .service-github { fill: #f5f5f5; }
 .service-linkace svg { color: #41649a; }
+.service-webmention svg { color: #dddddd; }
 
 .form-services .form-row {
     display: none;
@@ -113,6 +114,10 @@ body:has(.service-github.active) .form-services .form-row-github {
 }
 
 body:has(.service-linkace.active) .form-services .form-row-linkace {
+    display: flex;
+}
+
+body:has(.service-webmention.active) .form-services .form-row-webmention {
     display: flex;
 }
 

@@ -209,3 +209,11 @@ format: (data) => {
     services: [SERVICES.LINKACE],
 },
 ```
+
+#### Webmentions
+
+| Key      | Value                                          | Notes                           |
+| -------- | ---------------------------------------------- | ------------------------------- |
+| no config is required for webmentions |  |  |
+
+`content` returns from `transform.format` should be a link.

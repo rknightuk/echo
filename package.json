@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@remy/webmention": "^1.5.0",
     "cheerio": "^1.0.0-rc.12",
     "html-entities": "^2.4.0",
     "html-to-text": "^9.0.3",
