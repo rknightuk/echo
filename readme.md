@@ -79,7 +79,7 @@ Go to [the Echo website](https://echo.rknight.me) to use the config generator an
 
 ### Preset Transforms
 
-Echo has a few presets you can use instead of having to write the `getId` and `format` functions for every site. These can be seen in [`presets.js`](presets.js). For example, to use the Letterboxd or status.lol preset you can do the following:
+Echo has a few presets you can use instead of having to write the `getId` and `format` functions for every site. These can be seen in [`presets.js`](lib/presets.js). For example, to use the Letterboxd or status.lol preset you can do the following:
 
 ```js
 {
@@ -108,8 +108,8 @@ You can define the body of your post in `format` to make your posts look exactly
 ```js
 format: (data) => {
     const formatted = presets.default.format(data)
-    
-    // get the first link with Cheerio 
+
+    // get the first link with Cheerio
     // and append it to the content
     const $ = helpers.cheerioLoad(formatted.content)
     const firstLink = $('a:first').attr('href')
