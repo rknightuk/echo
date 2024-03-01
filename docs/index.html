@@ -317,7 +317,7 @@ $ node index.js
                     }
                     renderConfig()
                 }
-                
+
                 window.echoConfig = {
                     services: {},
                     sites: [],
@@ -370,6 +370,7 @@ $ node index.js
                             inputs['feed_omnivore'].checked ? 'omnivore' : false,
                             inputs['feed_github'].checked ? 'github' : false,
                             inputs['feed_linkace'].checked ? 'linkace' : false,
+                            inputs['feed_webmention'].checked ? 'webmention' : false,
                         ].filter(s => s),
                         transform: 'presets.default',
                     }
@@ -444,7 +445,7 @@ $ node index.js
                         if (!serviceConfig.domain) errors.push('domain')
                         if (!serviceConfig.apiKey) errors.push('api key')
                     } else if (service === 'webmention') {
-                        serviceConfig = {}    
+                        serviceConfig = {}
                     } else {
                         serviceConfig = {
                             url: inputs['hook_url'].value,
