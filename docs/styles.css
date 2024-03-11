@@ -152,3 +152,22 @@ body:has(.service-webmention.active) .form-services .form-row-webmention {
 .circle.red { background: #FF5F56; }
 .circle.yellow { background: #FFBD2E; }
 .circle.green { background: #27C93F; }
+
+.banner {
+    display: flex;
+    border: 3px solid var(--links);
+    padding: 10px;
+    font-size: 1.2em;
+    align-items: center;
+}
+
+.banner p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.banner svg {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
