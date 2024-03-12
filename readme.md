@@ -30,6 +30,8 @@ You can also run `node index.js dry`. This will log which posts will be created,
 
 Echo keeps track of the last item posted so on subsequent runs it will only post new posts.
 
+You can also run Echo with GitHub actions. [See Lewis' blog post for more info](https://lewisdale.dev/post/using-gitea-github-actions-for-triggering-echo/)
+
 ## Configuration
 
 There are two parts to configure: `sites` and `services`. `sites` is the RSS feeds you want to cross-post and `services` is the services you want to cross-post to.
