@@ -9,5 +9,8 @@
     "url-regex": "^5.0.0",
     "uuid": "^9.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "overrides": {
+    "minimist": "1.2.6"
+  }
 }
