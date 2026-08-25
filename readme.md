@@ -159,6 +159,20 @@ The Omnivore service will save a URL to your Omnivore account.
 |---|---|---|
 |`apiKey`|Your Omnivore API key|
 
+#### Forgejo (for eg. Codeberg)
+
+Create a new file on a Forgejo repository.
+
+| Key      | Value                 | Notes |
+| -------- | --------------------- | ----- |
+| `siteUrl` | Forgejo instance | e.g. `codeberg.org` |
+| `token` | Your GitHub token | |
+| `repo` | The repository to commit to | e.g. `rknightuk/echo` |
+| `branch` | The branch to commit to | |
+| `committer` | An object with `name` and `email` values | e.g. `{ name: 'Robb', email: 'robb@example.com }` |
+
+For posting to Codeberg your `format` function must return `content` and `filePath` where `filePath` is the path to where the file will be in the Github repository, for example `src/posts/movies/2024-02-09.md`. It can optionally return a `commit` message, which will fallback to `New post` if none is set.
+See the example `format` function in the [Github section](#github) below.
 
 #### GitHub
 
