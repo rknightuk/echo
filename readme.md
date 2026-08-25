@@ -166,7 +166,7 @@ Create a new file on a Forgejo repository.
 | Key      | Value                 | Notes |
 | -------- | --------------------- | ----- |
 | `siteUrl` | Forgejo instance | e.g. `codeberg.org` |
-| `token` | Your GitHub token | |
+| `token` | Your Forgejo token | |
 | `repo` | The repository to commit to | e.g. `rknightuk/echo` |
 | `branch` | The branch to commit to | |
 | `committer` | An object with `name` and `email` values | e.g. `{ name: 'Robb', email: 'robb@example.com }` |
